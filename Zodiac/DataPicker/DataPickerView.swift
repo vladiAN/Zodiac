@@ -10,7 +10,7 @@ import SwiftUI
 struct DatePickerView: View {
     @ObservedObject var viewModel = DatePickerViewModel()
     
-    let continueButtonTapped: () -> Void
+    let continueButtonTapped: (String) -> Void
     
     
     var body: some View {
@@ -30,7 +30,7 @@ struct DatePickerView: View {
                 .padding()
             
             Button(action: {
-                continueButtonTapped()
+                continueButtonTapped(viewModel.zodiacSignImageName ?? "plus")
             }) {
                 HStack {
                     Text("Continue")
@@ -41,6 +41,7 @@ struct DatePickerView: View {
                 .foregroundColor(.white)
                 .cornerRadius(8)
             }
+
 
             .padding(.bottom, 20)
             .padding()

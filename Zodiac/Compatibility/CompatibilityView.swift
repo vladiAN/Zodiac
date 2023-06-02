@@ -28,12 +28,14 @@ struct ContentView: View {
             HStack {
                 VStack {
                     Button(action: {
-                        viewModel.showDatePickerView = true
+                        openDatePicker(for: .firstSign)
                     }) {
                         Image(viewModel.firstSignImage)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
+                    .disabled(viewModel.isFirstButtonDisabled)
+                    
                     Text(viewModel.firstSignName)
                 }
                 
@@ -45,12 +47,14 @@ struct ContentView: View {
                 
                 VStack{
                     Button(action: {
-                        viewModel.showDatePickerView = true
+                        openDatePicker(for: .secondSign)
                     }) {
                         Image(viewModel.secondSignImage)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
+                    .disabled(viewModel.isSecondButtonDisabled)
+                    
                     Text(viewModel.secondSignName)
                 }
                 
@@ -69,6 +73,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
             }
+            .disabled(viewModel.firstSignImage == "plus" || viewModel.secondSignImage == "plus")
             .padding(.bottom, 100)
             
         }
@@ -83,11 +88,39 @@ struct ContentView: View {
                                          handleBarStyle: .solid(Color.secondary),
                                          cover: .enabled(Color.black.opacity(0.4)),
                                          cornerRadius: 10)) {
-            DatePickerView(continueButtonTapped: viewModel.continueButtonTapped)
+            if viewModel.selectedSign == .firstSign {
+                DatePickerView(continueButtonTapped: { zodiacSignImageName in
+                    viewModel.continueButtonTapped(zodiacSignImageName: zodiacSignImageName, for: .firstSign)
+                })
+            } else if viewModel.selectedSign == .secondSign {
+                DatePickerView(continueButtonTapped: { zodiacSignImageName in
+                    viewModel.continueButtonTapped(zodiacSignImageName: zodiacSignImageName, for: .secondSign)
+                })
+            }
+        }
+    }
+    
+    func openDatePicker(for sign: SelectedSign) {
+        if sign == .firstSign {
+            viewModel.selectedSign = .firstSign
+            viewModel.showDatePickerView = true
+            viewModel.isFirstButtonDisabled = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                viewModel.isFirstButtonDisabled = false
+            }
+        } else if sign == .secondSign {
+            viewModel.selectedSign = .secondSign
+            viewModel.showDatePickerView = true
+            viewModel.isSecondButtonDisabled = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                viewModel.isSecondButtonDisabled = false
+            }
         }
     }
 }
-                      
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

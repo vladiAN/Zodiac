@@ -8,19 +8,31 @@
 import Foundation
 
 class DatePickerViewModel: ObservableObject {
-    @Published var selectedDate: Date
+    private var initialSelectedDate: Date?
+    
     @Published var zodiacSignImageName: String?
+    @Published var selectedDate: Date {
+               didSet {
+                       initialSelectedDate = selectedDate
+               }
+           }
+
     
     init() {
+        if let initialDate = initialSelectedDate {
+            selectedDate = initialDate
+        } else {
             selectedDate = Date()
-            updateZodiacSign()
+            initialSelectedDate = selectedDate
         }
+        
+        updateZodiacSign()
+    }
+
     
     func updateZodiacSign() {
-
         let calendar = Calendar.current
         let components = calendar.dateComponents([.month, .day], from: selectedDate)
-        
         if let month = components.month, let day = components.day {
                 
                 switch (month, day) {
@@ -54,5 +66,7 @@ class DatePickerViewModel: ObservableObject {
         } else {
             print("Incorrect Date")
         }
+        
+        
     }
 }

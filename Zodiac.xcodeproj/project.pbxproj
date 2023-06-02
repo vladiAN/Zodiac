@@ -19,7 +19,6 @@
 		93BB3DB32A26440B00C8A644 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB3DB22A26440B00C8A644 /* Extension+View.swift */; };
 		C0F2CC8B2A2908B500BC88A1 /* Extention+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F2CC8A2A2908B500BC88A1 /* Extention+Color.swift */; };
 		C0F78EC72A28BDFC00A8CD26 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = C0F78EC62A28BDFC00A8CD26 /* PartialSheet */; };
-		C0F78ECB2A28C5E800A8CD26 /* 12.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F78ECA2A28C5E800A8CD26 /* 12.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		93BB3DB02A261FCA00C8A644 /* CompatibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompatibilityView.swift; sourceTree = "<group>"; };
 		93BB3DB22A26440B00C8A644 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		C0F2CC8A2A2908B500BC88A1 /* Extention+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Color.swift"; sourceTree = "<group>"; };
-		C0F78ECA2A28C5E800A8CD26 /* 12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 12.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +101,6 @@
 			children = (
 				93BB3DAE2A261F8C00C8A644 /* CompatibilityViewModel.swift */,
 				93BB3DB02A261FCA00C8A644 /* CompatibilityView.swift */,
-				C0F78ECA2A28C5E800A8CD26 /* 12.swift */,
 			);
 			path = Compatibility;
 			sourceTree = "<group>";
@@ -195,7 +192,6 @@
 			files = (
 				93076E792A2751FD0001C18E /* DataPickerViewModel.swift in Sources */,
 				93BB3DB32A26440B00C8A644 /* Extension+View.swift in Sources */,
-				C0F78ECB2A28C5E800A8CD26 /* 12.swift in Sources */,
 				93BB3DAD2A26074300C8A644 /* NetworkManager.swift in Sources */,
 				93BB3DAF2A261F8C00C8A644 /* CompatibilityViewModel.swift in Sources */,
 				93076E772A2749A80001C18E /* DataPickerView.swift in Sources */,
