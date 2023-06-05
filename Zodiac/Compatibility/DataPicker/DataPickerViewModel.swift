@@ -17,7 +17,6 @@ class DatePickerViewModel: ObservableObject {
                }
            }
 
-    
     init() {
         if let initialDate = initialSelectedDate {
             selectedDate = initialDate

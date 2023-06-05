@@ -10,17 +10,19 @@ import PartialSheet
 
 struct ContentView: View {
     @StateObject private var viewModel = CompatibilityViewModel()
-    
-    
+        
     var body: some View {
         
         
         VStack {
             
             Text("Compatibility").bold()
+                .foregroundColor(Color.white)
+
             
             
             Text("Choose your zodiac signs between which we will check compatibility").italic()
+                .foregroundColor(Color.white)
                 .multilineTextAlignment(.center)
                 .frame(width: UIScreen.main.bounds.width / 1.4)
                 .padding(.top, 50)
@@ -37,6 +39,8 @@ struct ContentView: View {
                     .disabled(viewModel.isFirstButtonDisabled)
                     
                     Text(viewModel.firstSignName)
+                        .foregroundColor(Color.white)
+
                 }
                 
                 Image("hearts")
@@ -56,6 +60,8 @@ struct ContentView: View {
                     .disabled(viewModel.isSecondButtonDisabled)
                     
                     Text(viewModel.secondSignName)
+                        .foregroundColor(Color.white)
+
                 }
                 
             }
@@ -65,16 +71,31 @@ struct ContentView: View {
             
             Spacer()
             Button(action: {
-                
+                viewModel.isDataLoading = true
+                viewModel.fetchCompatibility()
             }) {
-                Text("Check Compatibility")
-                    .padding()
-                    .background(Color.firstColorForGradient)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+                if viewModel.isDataLoading {
+                    ProgressView()
+                        .frame(width: 185, height: 28)
+                        .padding()
+                        .background(Color.firstColorForGradient)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                } else {
+                    Text("Check Compatibility")
+                        .frame(width: 185, height: 28)
+                        .padding()
+                        .background(Color.firstColorForGradient)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
             }
             .disabled(viewModel.firstSignImage == "plus" || viewModel.secondSignImage == "plus")
+            .opacity((viewModel.firstSignImage == "plus" || viewModel.secondSignImage == "plus") ? 0.5 : 1.0)
             .padding(.bottom, 100)
+            .sheet(isPresented: $viewModel.showCompatibilityScreen) {
+                CompatibilityListView(content: viewModel.compatibilities)
+            }
             
         }
         .background(

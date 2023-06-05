@@ -13,10 +13,12 @@ enum SelectedSign {
 }
 
 class CompatibilityViewModel: ObservableObject {
-//    @Published var compatibilities: [Compatibility] = []
+    @Published var compatibilities: [Compatibility] = []
+    @Published var showCompatibilityScreen = false
     @Published var showDatePickerView = false
     @Published var isFirstButtonDisabled = false
     @Published var isSecondButtonDisabled = false
+    @Published var isDataLoading = false
     @Published var firstSignImage = "plus"
     @Published var secondSignImage = "plus"
     @Published var firstSignName = "Add"
@@ -37,19 +39,30 @@ class CompatibilityViewModel: ObservableObject {
             }
         }
     
-//    func fetchCompatibility() {
-//        let path = "/affinity?sign1=\(selectedSign1.lowercased())&sign2=\(selectedSign2.lowercased())"
-//
-//        NetworkManager.shared.fetchData(forPath: path) { (data, _, _) in
-//            if let data = data {
-//                if let compatibilities = try? JSONDecoder().decode([Compatibility].self, from: data) {
-//                    DispatchQueue.main.async {
-//                        self.compatibilities = compatibilities
-//                    }
-//                }
-//            }
-//        }
-//    }
+    func fetchCompatibility() {
+        let path = "/affinity?sign1=\(firstSignImage)&sign2=\(secondSignImage)"
+        NetworkManager.shared.fetchData(forPath: path) { (data, _, _) in
+            if let data = data {
+                if let compatibilities = try? JSONDecoder().decode([Compatibility].self, from: data) {
+                    DispatchQueue.main.async {
+                        self.compatibilities = compatibilities
+                        self.isDataLoading = false
+                        self.showCompatibilityScreen = true
+                        
+                        print(compatibilities)
+                    }
+                }
+            }
+        }
+    }
+    
+    func test() {
+        print(firstSignImage, secondSignImage)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                                print(self.compatibilities)
+                            }
+        
+    }
     
 }
 
