@@ -17,6 +17,10 @@ struct Compatibility: Codable {
     let header, text: String
 }
 
+struct Numerology: Codable {
+    let desc, number: String
+}
+
 class NetworkManager {
     static let shared = NetworkManager()
     

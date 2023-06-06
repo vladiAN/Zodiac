@@ -10,7 +10,7 @@ import PartialSheet
 
 struct ContentView: View {
     @StateObject private var viewModel = CompatibilityViewModel()
-        
+    
     var body: some View {
         
         
@@ -18,7 +18,7 @@ struct ContentView: View {
             
             Text("Compatibility").bold()
                 .foregroundColor(Color.white)
-
+            
             
             
             Text("Choose your zodiac signs between which we will check compatibility").italic()
@@ -35,12 +35,13 @@ struct ContentView: View {
                         Image(viewModel.firstSignImage)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
+                            .scaleEffect(x: -1, y: 1)
                     }
                     .disabled(viewModel.isFirstButtonDisabled)
                     
                     Text(viewModel.firstSignName)
                         .foregroundColor(Color.white)
-
+                    
                 }
                 
                 Image("hearts")
@@ -56,12 +57,13 @@ struct ContentView: View {
                         Image(viewModel.secondSignImage)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
+                        
                     }
                     .disabled(viewModel.isSecondButtonDisabled)
                     
                     Text(viewModel.secondSignName)
                         .foregroundColor(Color.white)
-
+                    
                 }
                 
             }
@@ -79,8 +81,8 @@ struct ContentView: View {
                         .frame(width: 185, height: 28)
                         .padding()
                         .background(Color.firstColorForGradient)
-                        .foregroundColor(.white)
                         .cornerRadius(10)
+                        .tint(.white)
                 } else {
                     Text("Check Compatibility")
                         .frame(width: 185, height: 28)
@@ -93,10 +95,19 @@ struct ContentView: View {
             .disabled(viewModel.firstSignImage == "plus" || viewModel.secondSignImage == "plus")
             .opacity((viewModel.firstSignImage == "plus" || viewModel.secondSignImage == "plus") ? 0.5 : 1.0)
             .padding(.bottom, 100)
-            .sheet(isPresented: $viewModel.showCompatibilityScreen) {
-                CompatibilityListView(content: viewModel.compatibilities)
+            .fullScreenCover(isPresented: $viewModel.showCompatibilityScreen) {
+                NavigationView {
+                    CompatibilityListView(content: viewModel.compatibilities,
+                                          fistSign: viewModel.firstSignImage,
+                                          secondSign: viewModel.secondSignImage)
+                    .navigationBarItems(leading: Button(action: {
+                        viewModel.showCompatibilityScreen = false
+                    }) {
+                        Image(systemName: "chevron.backward")
+                        Text("Back")
+                    })
+                }
             }
-            
         }
         .background(
             LinearGradient(gradient: Gradient(colors: [Color.firstColorForGradient, Color.secondColorForGradient]),
@@ -110,11 +121,13 @@ struct ContentView: View {
                                          cover: .enabled(Color.black.opacity(0.4)),
                                          cornerRadius: 10)) {
             if viewModel.selectedSign == .firstSign {
-                DatePickerView(continueButtonTapped: { zodiacSignImageName in
+                DatePickerView(isFirstSign: true,
+                               continueButtonTapped: { zodiacSignImageName in
                     viewModel.continueButtonTapped(zodiacSignImageName: zodiacSignImageName, for: .firstSign)
                 })
             } else if viewModel.selectedSign == .secondSign {
-                DatePickerView(continueButtonTapped: { zodiacSignImageName in
+                DatePickerView(isFirstSign: false,
+                               continueButtonTapped: { zodiacSignImageName in
                     viewModel.continueButtonTapped(zodiacSignImageName: zodiacSignImageName, for: .secondSign)
                 })
             }
@@ -148,22 +161,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-
-//            ScrollView {
-//                ForEach(viewModel.compatibilities, id: \.header) { compatibility in
-//                    VStack(alignment: .leading) {
-//                        Text(compatibility.header)
-//                            .font(.headline)
-//                            .padding(.vertical, 2)
-//                        Text(compatibility.text)
-//                            .padding(.bottom, 4)
-//                    }
-//                    .padding(.horizontal)
-//                }
-//            }
-//        }
-//    }
 
 

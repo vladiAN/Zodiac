@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DatePickerView: View {
     @ObservedObject var viewModel = DatePickerViewModel()
+    @State var isFirstSign: Bool
     
     let continueButtonTapped: (String) -> Void
     
@@ -18,16 +19,28 @@ struct DatePickerView: View {
             Spacer()
             
             Text("Pick date of Birth")
+                .foregroundColor(.white)
             
-            Image(viewModel.zodiacSignImageName ?? "leo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding()
+            if isFirstSign {
+                Image(viewModel.zodiacSignImageName ?? "leo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .scaleEffect(x: -1, y: 1)
+                    .padding()
+                
+            } else {
+                Image(viewModel.zodiacSignImageName ?? "leo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+            }
             
             DatePicker("", selection: $viewModel.selectedDate, displayedComponents: [.date])
                 .labelsHidden()
                 .datePickerStyle(.wheel)
                 .padding()
+                .colorInvert()
+                
             
             Button(action: {
                 continueButtonTapped(viewModel.zodiacSignImageName ?? "plus")
