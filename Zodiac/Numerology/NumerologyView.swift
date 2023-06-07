@@ -35,17 +35,25 @@ struct NumerologyView: View {
                     .colorInvert()
                 
                 Button(action: {
+                    viewModel.isNumerologyDataLoading = true
                     viewModel.calculateDestinyNumber()
                     viewModel.fetchNumerology()
-                    
                 }) {
-                    
-                    Text("Сalculate your fate number")
-                        .frame(width: 250, height: 28)
-                        .padding()
-                        .background(Color.firstColorForGradient)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                    if viewModel.isNumerologyDataLoading {
+                        ProgressView()
+                            .frame(width: 250, height: 28)
+                            .padding()
+                            .background(Color.firstColorForGradient)
+                            .cornerRadius(10)
+                            .tint(.white)
+                    } else {
+                        Text("Сalculate your fate number")
+                            .frame(width: 250, height: 28)
+                            .padding()
+                            .background(Color.firstColorForGradient)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
                 }
                 .padding()
             }

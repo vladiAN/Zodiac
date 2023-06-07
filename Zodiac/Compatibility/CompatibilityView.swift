@@ -73,10 +73,10 @@ struct ContentView: View {
             
             Spacer()
             Button(action: {
-                viewModel.isDataLoading = true
+                viewModel.isCompatibilityDataLoading = true
                 viewModel.fetchCompatibility()
             }) {
-                if viewModel.isDataLoading {
+                if viewModel.isCompatibilityDataLoading {
                     ProgressView()
                         .frame(width: 185, height: 28)
                         .padding()

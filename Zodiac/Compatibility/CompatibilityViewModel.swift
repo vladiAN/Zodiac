@@ -18,7 +18,7 @@ class CompatibilityViewModel: ObservableObject {
     @Published var showDatePickerView = false
     @Published var isFirstButtonDisabled = false
     @Published var isSecondButtonDisabled = false
-    @Published var isDataLoading = false
+    @Published var isCompatibilityDataLoading = false
     @Published var firstSignImage = "plus"
     @Published var secondSignImage = "plus"
     @Published var firstSignName = "Add"
@@ -46,7 +46,7 @@ class CompatibilityViewModel: ObservableObject {
                 if let compatibilities = try? JSONDecoder().decode([Compatibility].self, from: data) {
                     DispatchQueue.main.async {
                         self.compatibilities = compatibilities
-                        self.isDataLoading = false
+                        self.isCompatibilityDataLoading = false
                         self.showCompatibilityScreen = true
                         
                         print(compatibilities)

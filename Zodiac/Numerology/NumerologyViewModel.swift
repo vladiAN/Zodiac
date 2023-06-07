@@ -8,27 +8,38 @@
 import Foundation
 
 class NumerologyViewModel: ObservableObject {
-    @Published var numerology: [Numerology] = []
+    @Published var numerology: Numerology?
     @Published var birthDate = Date()
     @Published var destinyNumber = 0
+    @Published var isNumerologyDataLoading = false
     
+
+
 
     func fetchNumerology() {
         let path = "/numerology?n=\(destinyNumber)"
         NetworkManager.shared.fetchData(forPath: path) { (data, _, _) in
             if let data = data {
-                if let numerology = try? JSONDecoder().decode([Numerology].self, from: data) {
-                    DispatchQueue.main.async {
-                        self.numerology = numerology
-                        print(self.destinyNumber)
-                        print(numerology)
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    if let numerologyDict = json as? [String: Any] {
+                        let numerology = Numerology(desc: numerologyDict["desc"] as? String ?? "",
+                                                    number: numerologyDict["number"] as? String ?? "")
+                        DispatchQueue.main.async {
+                            self.numerology = numerology
+                            self.isNumerologyDataLoading = false
+                            print(numerology.desc)
+                        }
+                    } else {
+                        print("Invalid numerology data format")
                     }
-                } else {
-                    print("!!!!!!")
+                } catch {
+                    print("Error decoding numerology data: \(error)")
                 }
             }
         }
     }
+
     
     func calculateDestinyNumber() {
         let calendar = Calendar.current
