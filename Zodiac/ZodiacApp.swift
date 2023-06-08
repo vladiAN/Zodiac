@@ -11,7 +11,7 @@ import SwiftUI
 struct ZodiacApp: App {
     var body: some Scene {
         WindowGroup {
-            NumerologyView()
+            Tabbar()
                 .attachPartialSheetToRoot()
         }
     }

@@ -23,39 +23,84 @@ struct NumerologyView: View {
             
             VStack {
                 
-                Text("State the date of birth")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
+                    Text("State the date of birth")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(height: viewModel.isNumberReceived ? 0 : 1)
+                        .opacity(viewModel.isNumberReceived ? 0 : 1)
+
                 
-                DatePicker("", selection: $viewModel.birthDate, displayedComponents: .date)
-                    .datePickerStyle(.wheel)
-                    .labelsHidden()
-                    .padding()
-                    .colorInvert()
+                    DatePicker("", selection: $viewModel.birthDate, displayedComponents: .date)
+                        .datePickerStyle(.wheel)
+                        .labelsHidden()
+                        .colorInvert()
+                        .frame(height: viewModel.isNumberReceived ? 0 : 400)
+                        .opacity(viewModel.isNumberReceived ? 0 : 1)
                 
                 Button(action: {
-                    viewModel.isNumerologyDataLoading = true
-                    viewModel.calculateDestinyNumber()
-                    viewModel.fetchNumerology()
-                }) {
-                    if viewModel.isNumerologyDataLoading {
-                        ProgressView()
-                            .frame(width: 250, height: 28)
-                            .padding()
-                            .background(Color.firstColorForGradient)
-                            .cornerRadius(10)
-                            .tint(.white)
+                    
+                    if viewModel.isNumberReceived {
+                        withAnimation(.easeInOut(duration: 1)) {
+                            viewModel.isNumberReceived.toggle()
+                        }
                     } else {
-                        Text("Сalculate your fate number")
+                        viewModel.isNumerologyDataLoading = true
+                        viewModel.calculateDestinyNumber()
+                        viewModel.fetchNumerology()
+                        withAnimation(.easeInOut(duration: 1)) {
+                            viewModel.isNumberReceived.toggle()
+                        }
+                    }
+                }) {
+                        Text(viewModel.isNumberReceived ? "Сalculate new fate number" : "Сalculate fate number")
                             .frame(width: 250, height: 28)
                             .padding()
-                            .background(Color.firstColorForGradient)
+                            .background(viewModel.isNumberReceived ? Color.secondColorForGradient : Color.firstColorForGradient)
                             .foregroundColor(.white)
                             .cornerRadius(10)
+                }
+                
+                if viewModel.isNumberReceived {
+                    GeometryReader { proxy in
+                        VStack {
+                            Text("You fate number")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .padding(.top, 30)
+                            
+                            Image(viewModel.destinyNumberImage)
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                                .aspectRatio(contentMode: .fit)
+                                .padding(.top, 30)
+                            
+                            DisclosureGroup(
+                                content: {
+                                    ScrollView {
+                                        Text(viewModel.numerology?.desc ?? "")
+                                            .padding(.horizontal, 5)
+                                            .foregroundColor(Color.black)
+                                    }
+                                },
+                                label: {
+                                    Text("Decryption number")
+                                        .font(.headline)
+                                        .foregroundColor(Color.black)
+                                        .padding(.horizontal, 5)
+                                        .multilineTextAlignment(.leading)
+                                }
+                            )
+                            .padding(.all, 10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(Color.white)
+                                )
+                            .padding(.horizontal)
+                            .padding(.top, 30)
+                        }.frame(maxWidth: .infinity)
                     }
                 }
-                .padding()
             }
         }
     }

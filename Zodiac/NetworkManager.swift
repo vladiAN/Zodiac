@@ -7,12 +7,6 @@
 
 import Foundation
 
-
-
-import Foundation
-
-import Foundation
-
 struct Compatibility: Codable {
     let header, text: String
 }

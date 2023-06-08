@@ -12,10 +12,10 @@ class NumerologyViewModel: ObservableObject {
     @Published var birthDate = Date()
     @Published var destinyNumber = 0
     @Published var isNumerologyDataLoading = false
+    @Published var isNumberReceived = false
+    @Published var destinyNumberImage = "one"
+    @Published var isOpenDecryption = false
     
-
-
-
     func fetchNumerology() {
         let path = "/numerology?n=\(destinyNumber)"
         NetworkManager.shared.fetchData(forPath: path) { (data, _, _) in
@@ -28,7 +28,6 @@ class NumerologyViewModel: ObservableObject {
                         DispatchQueue.main.async {
                             self.numerology = numerology
                             self.isNumerologyDataLoading = false
-                            print(numerology.desc)
                         }
                     } else {
                         print("Invalid numerology data format")
@@ -39,7 +38,6 @@ class NumerologyViewModel: ObservableObject {
             }
         }
     }
-
     
     func calculateDestinyNumber() {
         let calendar = Calendar.current
@@ -48,7 +46,34 @@ class NumerologyViewModel: ObservableObject {
         if let day = components.day, let month = components.month, let year = components.year {
             let dateString = String(day) + String(month) + String(year)
             let digits = dateString.compactMap { Int(String($0))}
-            destinyNumber = digits.reduce(0, +) % 9
+            let sum = digits.reduce(0, +)
+            destinyNumber = sum % 9 != 0 ? sum % 9 : 9
+        }
+        getNumberImage(number: destinyNumber)
+    }
+    
+    func getNumberImage(number: Int) {
+        switch number {
+        case 1:
+            destinyNumberImage = "one"
+        case 2:
+            destinyNumberImage = "two"
+        case 3:
+            destinyNumberImage = "three"
+        case 4:
+            destinyNumberImage = "four"
+        case 5:
+            destinyNumberImage = "five"
+        case 6:
+            destinyNumberImage = "six"
+        case 7:
+            destinyNumberImage = "seven"
+        case 8:
+            destinyNumberImage = "eight"
+        case 9:
+            destinyNumberImage = "nine"
+        default:
+            destinyNumberImage = "one"
         }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 import PartialSheet
 
-struct ContentView: View {
+struct CompatibilityView: View {
     @StateObject private var viewModel = CompatibilityViewModel()
     
     var body: some View {
@@ -158,7 +158,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CompatibilityView()
     }
 }
 

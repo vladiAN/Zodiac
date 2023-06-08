@@ -25,8 +25,6 @@ class CompatibilityViewModel: ObservableObject {
     @Published var secondSignName = "Add"
     @Published var selectedSign: SelectedSign = .firstSign
     
-    
-    
     func continueButtonTapped(zodiacSignImageName: String, for sign: SelectedSign) {
             showDatePickerView = false
             
@@ -54,14 +52,6 @@ class CompatibilityViewModel: ObservableObject {
                 }
             }
         }
-    }
-    
-    func test() {
-        print(firstSignImage, secondSignImage)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                                print(self.compatibilities)
-                            }
-        
     }
     
 }
