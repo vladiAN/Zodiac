@@ -15,6 +15,13 @@ struct Numerology: Codable {
     let desc, number: String
 }
 
+struct DescriptionSign: Codable {
+    let about, career, compatibility, dateRange: String
+    let element, health, love, man: String
+    let name, nature, relationship, rulingPlanet: String
+    let strengths, symbol, weaknesses, woman: String
+}
+
 class NetworkManager {
     static let shared = NetworkManager()
     

@@ -13,7 +13,6 @@ struct DatePickerView: View {
     
     let continueButtonTapped: (String) -> Void
     
-    
     var body: some View {
         VStack {
             Spacer()
@@ -22,14 +21,14 @@ struct DatePickerView: View {
                 .foregroundColor(.white)
             
             if isFirstSign {
-                Image(viewModel.zodiacSignImageName ?? "leo")
+                Image(Calendar.current.updateZodiacSign(for: viewModel.selectedDate) ?? "leo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .scaleEffect(x: -1, y: 1)
                     .padding()
                 
             } else {
-                Image(viewModel.zodiacSignImageName ?? "leo")
+                Image(Calendar.current.updateZodiacSign(for: viewModel.selectedDate) ?? "leo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding()
@@ -43,7 +42,7 @@ struct DatePickerView: View {
                 
             
             Button(action: {
-                continueButtonTapped(viewModel.zodiacSignImageName ?? "plus")
+                continueButtonTapped(Calendar.current.updateZodiacSign(for: viewModel.selectedDate) ?? "plus")
             }) {
                 HStack {
                     Text("Continue")
@@ -58,12 +57,8 @@ struct DatePickerView: View {
             .padding()
         }
         .background(Color.firstColorForGradient)
-        .onChange(of: viewModel.selectedDate, perform: { _ in
-            viewModel.updateZodiacSign()
-        })
-            .frame(height: UIScreen.main.bounds.height * 2/3)
+        .frame(height: UIScreen.main.bounds.height * 2/3)
     }
-
 }
 
 

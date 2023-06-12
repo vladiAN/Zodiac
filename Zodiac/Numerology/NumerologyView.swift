@@ -75,30 +75,33 @@ struct NumerologyView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .padding(.top, 30)
                             
-                            DisclosureGroup(
-                                content: {
-                                    ScrollView {
-                                        Text(viewModel.numerology?.desc ?? "")
-                                            .padding(.horizontal, 5)
+                            ScrollView {
+                                DisclosureGroup(
+                                    content: {
+                                        ScrollView {
+                                            Text(viewModel.numerology?.desc ?? "")
+                                                .padding(.horizontal, 5)
+                                                .foregroundColor(Color.black)
+                                        }
+                                    },
+                                    label: {
+                                        Text("Descryption number")
+                                            .font(.headline)
                                             .foregroundColor(Color.black)
+                                            .padding(.horizontal, 5)
+                                            .multilineTextAlignment(.leading)
                                     }
-                                },
-                                label: {
-                                    Text("Decryption number")
-                                        .font(.headline)
-                                        .foregroundColor(Color.black)
-                                        .padding(.horizontal, 5)
-                                        .multilineTextAlignment(.leading)
-                                }
-                            )
-                            .padding(.all, 10)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(Color.white)
                                 )
-                            .padding(.horizontal)
-                            .padding(.top, 30)
-                        }.frame(maxWidth: .infinity)
+                                .padding(.all, 10)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .foregroundColor(Color.white)
+                                )
+                                .padding(.horizontal)
+                                .padding(.top, 30)
+                            }
+                            .padding(.bottom, 26)
+                        }
                     }
                 }
             }

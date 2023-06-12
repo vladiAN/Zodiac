@@ -22,6 +22,14 @@
 		C0F2CC8B2A2908B500BC88A1 /* Extention+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F2CC8A2A2908B500BC88A1 /* Extention+Color.swift */; };
 		C0F78EC72A28BDFC00A8CD26 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = C0F78EC62A28BDFC00A8CD26 /* PartialSheet */; };
 		EF996C512A32215E00439C14 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C502A32215E00439C14 /* Tabbar.swift */; };
+		EF996C532A3337FD00439C14 /* TabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C522A3337FD00439C14 /* TabbarItem.swift */; };
+		EF996C552A3338A300439C14 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C542A3338A300439C14 /* TabBarViewModel.swift */; };
+		EF996C582A33507D00439C14 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C572A33507D00439C14 /* FirstScreenView.swift */; };
+		EF996C5B2A336DA800439C14 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C5A2A336DA800439C14 /* ProfileView.swift */; };
+		EF996C5D2A336DF500439C14 /* HoroscopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C5C2A336DF500439C14 /* HoroscopeView.swift */; };
+		EF996C612A3372C000439C14 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C602A3372C000439C14 /* ProfileViewModel.swift */; };
+		EF996C642A33776B00439C14 /* FirstScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C632A33776B00439C14 /* FirstScreenViewModel.swift */; };
+		EF996C662A3624DA00439C14 /* DescriptionSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C652A3624DA00439C14 /* DescriptionSignView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +48,14 @@
 		C0B154D82A2FB6C700C7B55A /* NumerologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyViewModel.swift; sourceTree = "<group>"; };
 		C0F2CC8A2A2908B500BC88A1 /* Extention+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Color.swift"; sourceTree = "<group>"; };
 		EF996C502A32215E00439C14 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
+		EF996C522A3337FD00439C14 /* TabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItem.swift; sourceTree = "<group>"; };
+		EF996C542A3338A300439C14 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		EF996C572A33507D00439C14 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
+		EF996C5A2A336DA800439C14 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EF996C5C2A336DF500439C14 /* HoroscopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeView.swift; sourceTree = "<group>"; };
+		EF996C602A3372C000439C14 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		EF996C632A33776B00439C14 /* FirstScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewModel.swift; sourceTree = "<group>"; };
+		EF996C652A3624DA00439C14 /* DescriptionSignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionSignView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				93BB3D9D2A25F98000C8A644 /* Zodiac */,
+				93BB3DA22A25F98200C8A644 /* Assets.xcassets */,
 				93BB3D9C2A25F98000C8A644 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,12 +100,15 @@
 			isa = PBXGroup;
 			children = (
 				93BB3D9E2A25F98000C8A644 /* ZodiacApp.swift */,
-				93BB3DAC2A26074300C8A644 /* NetworkManager.swift */,
-				EF996C502A32215E00439C14 /* Tabbar.swift */,
-				93BB3DA22A25F98200C8A644 /* Assets.xcassets */,
-				93BB3DB42A27446200C8A644 /* Compatibility */,
-				93076E7A2A2762E90001C18E /* Extension */,
+				EF996C592A336D7D00439C14 /* FirstScreen */,
+				EF996C5E2A336E0D00439C14 /* Horoscope */,
+				EF996C562A3338D300439C14 /* TabBar */,
 				C0B154DA2A2FB6CC00C7B55A /* Numerology */,
+				93BB3DB42A27446200C8A644 /* Compatibility */,
+				EF996C5F2A336E2C00439C14 /* Profile */,
+				93BB3DB52A27447D00C8A644 /* DataPicker */,
+				93076E7A2A2762E90001C18E /* Extension */,
+				93BB3DAC2A26074300C8A644 /* NetworkManager.swift */,
 				93BB3DA42A25F98200C8A644 /* Preview Content */,
 			);
 			path = Zodiac;
@@ -105,7 +125,6 @@
 		93BB3DB42A27446200C8A644 /* Compatibility */ = {
 			isa = PBXGroup;
 			children = (
-				93BB3DB52A27447D00C8A644 /* DataPicker */,
 				93BB3DAE2A261F8C00C8A644 /* CompatibilityViewModel.swift */,
 				C0B154D22A2E093200C7B55A /* CompatibilityListView.swift */,
 				93BB3DB02A261FCA00C8A644 /* CompatibilityView.swift */,
@@ -129,6 +148,43 @@
 				C0B154D82A2FB6C700C7B55A /* NumerologyViewModel.swift */,
 			);
 			path = Numerology;
+			sourceTree = "<group>";
+		};
+		EF996C562A3338D300439C14 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				EF996C502A32215E00439C14 /* Tabbar.swift */,
+				EF996C522A3337FD00439C14 /* TabbarItem.swift */,
+				EF996C542A3338A300439C14 /* TabBarViewModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		EF996C592A336D7D00439C14 /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				EF996C572A33507D00439C14 /* FirstScreenView.swift */,
+				EF996C632A33776B00439C14 /* FirstScreenViewModel.swift */,
+			);
+			path = FirstScreen;
+			sourceTree = "<group>";
+		};
+		EF996C5E2A336E0D00439C14 /* Horoscope */ = {
+			isa = PBXGroup;
+			children = (
+				EF996C5C2A336DF500439C14 /* HoroscopeView.swift */,
+			);
+			path = Horoscope;
+			sourceTree = "<group>";
+		};
+		EF996C5F2A336E2C00439C14 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EF996C5A2A336DA800439C14 /* ProfileView.swift */,
+				EF996C652A3624DA00439C14 /* DescriptionSignView.swift */,
+				EF996C602A3372C000439C14 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,17 +263,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF996C5D2A336DF500439C14 /* HoroscopeView.swift in Sources */,
+				EF996C642A33776B00439C14 /* FirstScreenViewModel.swift in Sources */,
 				93076E792A2751FD0001C18E /* DataPickerViewModel.swift in Sources */,
 				93BB3DB32A26440B00C8A644 /* Extension+View.swift in Sources */,
 				93BB3DAD2A26074300C8A644 /* NetworkManager.swift in Sources */,
+				EF996C582A33507D00439C14 /* FirstScreenView.swift in Sources */,
+				EF996C532A3337FD00439C14 /* TabbarItem.swift in Sources */,
 				EF996C512A32215E00439C14 /* Tabbar.swift in Sources */,
 				C0B154D32A2E093200C7B55A /* CompatibilityListView.swift in Sources */,
 				C0B154D72A2F816F00C7B55A /* NumerologyView.swift in Sources */,
+				EF996C5B2A336DA800439C14 /* ProfileView.swift in Sources */,
 				93BB3DAF2A261F8C00C8A644 /* CompatibilityViewModel.swift in Sources */,
 				93076E772A2749A80001C18E /* DataPickerView.swift in Sources */,
+				EF996C612A3372C000439C14 /* ProfileViewModel.swift in Sources */,
+				EF996C662A3624DA00439C14 /* DescriptionSignView.swift in Sources */,
 				C0F2CC8B2A2908B500BC88A1 /* Extention+Color.swift in Sources */,
 				C0B154D92A2FB6C700C7B55A /* NumerologyViewModel.swift in Sources */,
 				93BB3DB12A261FCA00C8A644 /* CompatibilityView.swift in Sources */,
+				EF996C552A3338A300439C14 /* TabBarViewModel.swift in Sources */,
 				93BB3D9F2A25F98000C8A644 /* ZodiacApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,8 +419,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,8 +453,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
