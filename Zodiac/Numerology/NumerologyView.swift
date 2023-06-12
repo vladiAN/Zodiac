@@ -27,11 +27,12 @@ struct NumerologyView: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding()
+                        .padding(.top, 10)
                         .frame(height: viewModel.isNumberReceived ? 0 : 1)
                         .opacity(viewModel.isNumberReceived ? 0 : 1)
 
                 
-                    DatePicker("", selection: $viewModel.birthDate, displayedComponents: .date)
+                    DatePicker("", selection: $viewModel.birthDate, in: ...Date(), displayedComponents: .date)
                         .datePickerStyle(.wheel)
                         .labelsHidden()
                         .colorInvert()
@@ -81,7 +82,9 @@ struct NumerologyView: View {
                                         ScrollView {
                                             Text(viewModel.numerology?.desc ?? "")
                                                 .padding(.horizontal, 5)
+                                                .padding()
                                                 .foregroundColor(Color.black)
+                                                .multilineTextAlignment(.leading)
                                         }
                                     },
                                     label: {

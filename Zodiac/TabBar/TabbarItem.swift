@@ -42,6 +42,8 @@ struct TabBarItem: View {
                         Text(tab)
                             .font(.system(size: 14))
                             .foregroundColor(.black)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
                     }
                 }
             }

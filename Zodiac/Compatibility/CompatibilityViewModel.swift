@@ -47,7 +47,6 @@ class CompatibilityViewModel: ObservableObject {
                         self.isCompatibilityDataLoading = false
                         self.showCompatibilityScreen = true
                         
-                        print(compatibilities)
                     }
                 }
             }

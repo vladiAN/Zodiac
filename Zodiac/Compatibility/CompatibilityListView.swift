@@ -40,6 +40,7 @@ struct CompatibilityListView: View {
                             ScrollView {
                                 Text(compatibility.text)
                                     .padding(.horizontal, 5)
+                                    .padding(.all, 10)
                                     .foregroundColor(Color.black)
                                 
                             }

@@ -8,54 +8,55 @@
 import SwiftUI
 
 struct DescriptionSignView: View {
-    @State var content: [DescriptionSign]
+    @State private var isExpanded = false
+    @State var descriptionSign: DescriptionSign
     
     var body: some View {
-        ZStack{
+        ScrollView {
+                  ForEach(descriptionSign.sections, id: \.self) { section in
+                      DisclosureGroup(
+                          content: {
+                              ScrollView {
+                                  Text(section.value)
+                                      .padding(.all, 10)
+                                      .padding(.horizontal, 5)
+                                      .foregroundColor(Color.black)
+                                      .multilineTextAlignment(.leading)
+                                  
+                              }
+                          },
+                          label: {
+                              Text(section.title)
+                                  .foregroundColor(Color.black)
+                                  .font(.headline)
+                                  .padding(.horizontal, 5)
+                                  .multilineTextAlignment(.leading)
+                          }
+                      )
+                      .padding(.vertical, 8)
+                      .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(Color.white)
+                            .padding(.horizontal, -5)
+                      )
+                      .padding(.horizontal)
+                      .padding(.bottom, 8)
+                  }
+              }
+        .background(
             LinearGradient(
                 gradient: Gradient(colors: [Color.firstColorForGradient, Color.secondColorForGradient]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
             .edgesIgnoringSafeArea(.all)
-            
-//            ScrollView {
-//                ForEach(content, id: \.header) { content in
-//                    DisclosureGroup(
-//                        content: {
-//                            ScrollView {
-//                                Text(content.text)
-//                                    .padding(.horizontal, 5)
-//                                    .foregroundColor(Color.black)
-//
-//                            }
-//                        },
-//                        label: {
-//                            Text(compatibility.header)
-//                                .foregroundColor(Color.black)
-//                                .font(.headline)
-//                                .padding(.horizontal, 5)
-//                                .multilineTextAlignment(.leading)
-//                        }
-//                    )
-//                    .padding(.vertical, 8)
-//                    .background(
-//                        RoundedRectangle(cornerRadius: 10)
-//                            .foregroundColor(Color.white)
-//                            .padding(.horizontal, -5)
-//                    )
-//                    .padding(.horizontal)
-//                    .padding(.bottom, 8)
-//                }
-//            }
-//            .padding(.top, 10)
-
-        }
+        )
+        .navigationTitle("Sign Details")
     }
 }
 
-//struct DescriptionSignView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DescriptionSignView()
-//    }
-//}
+struct DescriptionSignView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
+    }
+}

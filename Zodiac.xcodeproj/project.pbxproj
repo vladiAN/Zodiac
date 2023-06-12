@@ -30,6 +30,9 @@
 		EF996C612A3372C000439C14 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C602A3372C000439C14 /* ProfileViewModel.swift */; };
 		EF996C642A33776B00439C14 /* FirstScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C632A33776B00439C14 /* FirstScreenViewModel.swift */; };
 		EF996C662A3624DA00439C14 /* DescriptionSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C652A3624DA00439C14 /* DescriptionSignView.swift */; };
+		EF996C682A37315200439C14 /* Extention+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C672A37315200439C14 /* Extention+Calendar.swift */; };
+		EF996C6C2A375CB700439C14 /* Extention+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C6B2A375CB700439C14 /* Extention+Int.swift */; };
+		EF996C6E2A37659D00439C14 /* DescriptiomNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C6D2A37659D00439C14 /* DescriptiomNumberView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		EF996C602A3372C000439C14 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EF996C632A33776B00439C14 /* FirstScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewModel.swift; sourceTree = "<group>"; };
 		EF996C652A3624DA00439C14 /* DescriptionSignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionSignView.swift; sourceTree = "<group>"; };
+		EF996C672A37315200439C14 /* Extention+Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Calendar.swift"; sourceTree = "<group>"; };
+		EF996C6B2A375CB700439C14 /* Extention+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Int.swift"; sourceTree = "<group>"; };
+		EF996C6D2A37659D00439C14 /* DescriptiomNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptiomNumberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				93BB3D9E2A25F98000C8A644 /* ZodiacApp.swift */,
+				EF996C672A37315200439C14 /* Extention+Calendar.swift */,
+				EF996C6B2A375CB700439C14 /* Extention+Int.swift */,
 				EF996C592A336D7D00439C14 /* FirstScreen */,
 				EF996C5E2A336E0D00439C14 /* Horoscope */,
 				EF996C562A3338D300439C14 /* TabBar */,
@@ -183,6 +191,7 @@
 				EF996C5A2A336DA800439C14 /* ProfileView.swift */,
 				EF996C652A3624DA00439C14 /* DescriptionSignView.swift */,
 				EF996C602A3372C000439C14 /* ProfileViewModel.swift */,
+				EF996C6D2A37659D00439C14 /* DescriptiomNumberView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -269,6 +278,7 @@
 				93BB3DB32A26440B00C8A644 /* Extension+View.swift in Sources */,
 				93BB3DAD2A26074300C8A644 /* NetworkManager.swift in Sources */,
 				EF996C582A33507D00439C14 /* FirstScreenView.swift in Sources */,
+				EF996C6E2A37659D00439C14 /* DescriptiomNumberView.swift in Sources */,
 				EF996C532A3337FD00439C14 /* TabbarItem.swift in Sources */,
 				EF996C512A32215E00439C14 /* Tabbar.swift in Sources */,
 				C0B154D32A2E093200C7B55A /* CompatibilityListView.swift in Sources */,
@@ -278,10 +288,12 @@
 				93076E772A2749A80001C18E /* DataPickerView.swift in Sources */,
 				EF996C612A3372C000439C14 /* ProfileViewModel.swift in Sources */,
 				EF996C662A3624DA00439C14 /* DescriptionSignView.swift in Sources */,
+				EF996C6C2A375CB700439C14 /* Extention+Int.swift in Sources */,
 				C0F2CC8B2A2908B500BC88A1 /* Extention+Color.swift in Sources */,
 				C0B154D92A2FB6C700C7B55A /* NumerologyViewModel.swift in Sources */,
 				93BB3DB12A261FCA00C8A644 /* CompatibilityView.swift in Sources */,
 				EF996C552A3338A300439C14 /* TabBarViewModel.swift in Sources */,
+				EF996C682A37315200439C14 /* Extention+Calendar.swift in Sources */,
 				93BB3D9F2A25F98000C8A644 /* ZodiacApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

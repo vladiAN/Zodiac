@@ -16,10 +16,7 @@ struct HoroscopeView: View {
                 endPoint: .bottomTrailing
             )
             .edgesIgnoringSafeArea(.all)
-            
-            
-            
-            
+
         }
     }
 }

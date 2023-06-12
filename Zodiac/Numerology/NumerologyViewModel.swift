@@ -40,41 +40,28 @@ class NumerologyViewModel: ObservableObject {
     }
     
     func calculateDestinyNumber() {
+        destinyNumber = birthDate.calculateDestinyNumber().0
+        destinyNumberImage = birthDate.calculateDestinyNumber().1
+    }
+    
+}
+
+
+
+extension Date {
+    func calculateDestinyNumber() -> (Int, String) {
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.day, .month, .year], from: birthDate)
+        let components = calendar.dateComponents([.day, .month, .year], from: self)
         
         if let day = components.day, let month = components.month, let year = components.year {
             let dateString = String(day) + String(month) + String(year)
             let digits = dateString.compactMap { Int(String($0))}
             let sum = digits.reduce(0, +)
-            destinyNumber = sum % 9 != 0 ? sum % 9 : 9
+            let destinyNumber = sum % 9 != 0 ? sum % 9 : 9
+            let destinyNumberImage = destinyNumber.getNumberImage()
+            return (destinyNumber, destinyNumberImage)
         }
-        getNumberImage(number: destinyNumber)
-    }
-    
-    func getNumberImage(number: Int) {
-        switch number {
-        case 1:
-            destinyNumberImage = "one"
-        case 2:
-            destinyNumberImage = "two"
-        case 3:
-            destinyNumberImage = "three"
-        case 4:
-            destinyNumberImage = "four"
-        case 5:
-            destinyNumberImage = "five"
-        case 6:
-            destinyNumberImage = "six"
-        case 7:
-            destinyNumberImage = "seven"
-        case 8:
-            destinyNumberImage = "eight"
-        case 9:
-            destinyNumberImage = "nine"
-        default:
-            destinyNumberImage = "one"
-        }
+        
+        return (0, "")
     }
 }
-

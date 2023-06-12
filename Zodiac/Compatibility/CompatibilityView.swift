@@ -18,6 +18,7 @@ struct CompatibilityView: View {
             
             Text("Compatibility").bold()
                 .foregroundColor(Color.white)
+                .padding(.top, 10)
             
             
             

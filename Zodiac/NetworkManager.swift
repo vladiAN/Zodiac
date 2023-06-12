@@ -15,12 +15,37 @@ struct Numerology: Codable {
     let desc, number: String
 }
 
+struct SectionData: Hashable {
+    let title: String
+    let value: String
+}
+
 struct DescriptionSign: Codable {
     let about, career, compatibility, dateRange: String
-    let element, health, love, man: String
-    let name, nature, relationship, rulingPlanet: String
-    let strengths, symbol, weaknesses, woman: String
+        let element, health, love, man: String
+        let name, nature, relationship, rulingPlanet: String
+        let strengths, symbol, weaknesses, woman: String
+    
+    var sections: [SectionData] {
+            let mirror = Mirror(reflecting: self)
+            return mirror.children.compactMap { child in
+                if let label = child.label {
+                    return SectionData(title: label.capitalized, value: child.value as? String ?? "")
+                }
+                return nil
+            }
+        }
+
+        enum CodingKeys: String, CodingKey {
+            case about, career, compatibility
+            case dateRange = "date_range"
+            case element, health, love, man, name, nature, relationship
+            case rulingPlanet = "ruling_planet"
+            case strengths, symbol, weaknesses, woman
+        }
 }
+
+
 
 class NetworkManager {
     static let shared = NetworkManager()

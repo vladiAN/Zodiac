@@ -24,15 +24,15 @@ struct Tabbar: View {
             }
             
             
-            HStack {
+            HStack() {
                 ForEach(viewModel.tabs, id: \.self) { tab in
                     Spacer()
                     TabBarItem(tab: tab, selectedTab: $viewModel.selectedTab)
                     Spacer()
                 }
             }
-            .padding(.top, 20)
-            .padding(.bottom, 5)
+            .padding(.top, 15)
+            .padding(.bottom, 15)
             .frame(width: UIScreen.main.bounds.width, height: 75)
             .background(Color.firstColorForGradient)
             
