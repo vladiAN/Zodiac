@@ -11,12 +11,14 @@ import SwiftUI
 struct ZodiacApp: App {
     var body: some Scene {
         WindowGroup {
-            FirstScreenView()
-//            Tabbar()
-            
+            FirstScreenView()            
                 .attachPartialSheetToRoot()
         }
     }
 }
 
-
+class NavigationHelper: ObservableObject {
+    
+    @Published var showNextView = false
+    
+}

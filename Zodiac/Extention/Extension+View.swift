@@ -8,12 +8,6 @@
 import Foundation
 import SwiftUI
 
-extension View {
-    func halfSheet<SheetContent: View>(showSheet: Binding<Bool>, @ViewBuilder sheetContent: @escaping () -> SheetContent) -> some View {
-        self.modifier(HalfSheetModifier(showSheet: showSheet, sheetContent: sheetContent))
-    }
-}
-
 struct HalfSheetModifier<SheetContent: View>: ViewModifier {
     @Binding var showSheet: Bool
     let sheetContent: () -> SheetContent
@@ -48,7 +42,6 @@ struct HalfSheetModifier<SheetContent: View>: ViewModifier {
     }
 }
 
-
 struct ClearBackgroundView: UIViewRepresentable {
     func makeUIView(context: Context) -> some UIView {
         let view = UIView()
@@ -66,6 +59,12 @@ struct ClearBackgroundViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .background(ClearBackgroundView())
+    }
+}
+
+extension View {
+    func halfSheet<SheetContent: View>(showSheet: Binding<Bool>, @ViewBuilder sheetContent: @escaping () -> SheetContent) -> some View {
+        self.modifier(HalfSheetModifier(showSheet: showSheet, sheetContent: sheetContent))
     }
 }
 

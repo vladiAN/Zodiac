@@ -33,6 +33,7 @@
 		EF996C682A37315200439C14 /* Extention+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C672A37315200439C14 /* Extention+Calendar.swift */; };
 		EF996C6C2A375CB700439C14 /* Extention+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C6B2A375CB700439C14 /* Extention+Int.swift */; };
 		EF996C6E2A37659D00439C14 /* DescriptiomNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C6D2A37659D00439C14 /* DescriptiomNumberView.swift */; };
+		EF996C702A382AD600439C14 /* Extention+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C6F2A382AD600439C14 /* Extention+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		EF996C672A37315200439C14 /* Extention+Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Calendar.swift"; sourceTree = "<group>"; };
 		EF996C6B2A375CB700439C14 /* Extention+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Int.swift"; sourceTree = "<group>"; };
 		EF996C6D2A37659D00439C14 /* DescriptiomNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptiomNumberView.swift; sourceTree = "<group>"; };
+		EF996C6F2A382AD600439C14 /* Extention+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Date.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,15 +78,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		93076E7A2A2762E90001C18E /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				93BB3DB22A26440B00C8A644 /* Extension+View.swift */,
-				C0F2CC8A2A2908B500BC88A1 /* Extention+Color.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		93BB3D922A25F98000C8A644 = {
 			isa = PBXGroup;
 			children = (
@@ -106,16 +99,14 @@
 			isa = PBXGroup;
 			children = (
 				93BB3D9E2A25F98000C8A644 /* ZodiacApp.swift */,
-				EF996C672A37315200439C14 /* Extention+Calendar.swift */,
-				EF996C6B2A375CB700439C14 /* Extention+Int.swift */,
+				EF996C712A38314000439C14 /* Extention */,
 				EF996C592A336D7D00439C14 /* FirstScreen */,
-				EF996C5E2A336E0D00439C14 /* Horoscope */,
 				EF996C562A3338D300439C14 /* TabBar */,
 				C0B154DA2A2FB6CC00C7B55A /* Numerology */,
+				EF996C5E2A336E0D00439C14 /* Horoscope */,
 				93BB3DB42A27446200C8A644 /* Compatibility */,
 				EF996C5F2A336E2C00439C14 /* Profile */,
 				93BB3DB52A27447D00C8A644 /* DataPicker */,
-				93076E7A2A2762E90001C18E /* Extension */,
 				93BB3DAC2A26074300C8A644 /* NetworkManager.swift */,
 				93BB3DA42A25F98200C8A644 /* Preview Content */,
 			);
@@ -194,6 +185,18 @@
 				EF996C6D2A37659D00439C14 /* DescriptiomNumberView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		EF996C712A38314000439C14 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				EF996C672A37315200439C14 /* Extention+Calendar.swift */,
+				EF996C6B2A375CB700439C14 /* Extention+Int.swift */,
+				EF996C6F2A382AD600439C14 /* Extention+Date.swift */,
+				93BB3DB22A26440B00C8A644 /* Extension+View.swift */,
+				C0F2CC8A2A2908B500BC88A1 /* Extention+Color.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +281,7 @@
 				93BB3DB32A26440B00C8A644 /* Extension+View.swift in Sources */,
 				93BB3DAD2A26074300C8A644 /* NetworkManager.swift in Sources */,
 				EF996C582A33507D00439C14 /* FirstScreenView.swift in Sources */,
+				EF996C702A382AD600439C14 /* Extention+Date.swift in Sources */,
 				EF996C6E2A37659D00439C14 /* DescriptiomNumberView.swift in Sources */,
 				EF996C532A3337FD00439C14 /* TabbarItem.swift in Sources */,
 				EF996C512A32215E00439C14 /* Tabbar.swift in Sources */,

@@ -26,7 +26,7 @@ struct DatePickerView: View {
                     .aspectRatio(contentMode: .fit)
                     .scaleEffect(x: -1, y: 1)
                     .padding()
-
+                
             } else {
                 Image(Calendar.current.updateZodiacSign(for: viewModel.selectedDate) ?? "leo")
                     .resizable()
@@ -34,12 +34,11 @@ struct DatePickerView: View {
                     .padding()
             }
             
-
             DatePicker("", selection: $viewModel.selectedDate, in: ...Date(), displayedComponents: [.date])
                 .labelsHidden()
                 .datePickerStyle(.wheel)
                 .colorInvert()
-                
+            
             
             Button(action: {
                 continueButtonTapped(Calendar.current.updateZodiacSign(for: viewModel.selectedDate) ?? "plus")

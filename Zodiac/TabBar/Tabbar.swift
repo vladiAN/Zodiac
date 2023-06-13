@@ -23,7 +23,6 @@ struct Tabbar: View {
                     .tag("Profile")
             }
             
-            
             HStack() {
                 ForEach(viewModel.tabs, id: \.self) { tab in
                     Spacer()
@@ -37,10 +36,9 @@ struct Tabbar: View {
             .background(Color.firstColorForGradient)
             
         }
-        
+        .navigationBarBackButtonHidden(true)
     }
 }
-
 
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {

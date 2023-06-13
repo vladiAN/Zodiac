@@ -20,8 +20,6 @@ struct CompatibilityView: View {
                 .foregroundColor(Color.white)
                 .padding(.top, 10)
             
-            
-            
             Text("Choose your zodiac signs between which we will check compatibility").italic()
                 .foregroundColor(Color.white)
                 .multilineTextAlignment(.center)
@@ -155,7 +153,6 @@ struct CompatibilityView: View {
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -42,7 +42,6 @@ struct CompatibilityListView: View {
                                     .padding(.horizontal, 5)
                                     .padding(.all, 10)
                                     .foregroundColor(Color.black)
-                                
                             }
                         },
                         label: {

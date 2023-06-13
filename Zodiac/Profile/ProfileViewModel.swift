@@ -18,6 +18,31 @@ class ProfileViewModel: ObservableObject {
     @Published var zodiacSignProfileImageName: String = "leo"
     @Published var destynyNumberProfileImageName: String = "one"
     
+    
+    init() {
+        loadProfileData()
+        print(destinyNumberProfile, zodiacSignProfileImageName, destynyNumberProfileImageName)
+    }
+    
+    func loadProfileData() {
+        let userDefaults = UserDefaults.standard
+        if let savedDate = userDefaults.object(forKey: "currentDate") as? Date {
+            
+            let (destinyNumber, destinyNumberImage) = savedDate.calculateDestinyNumber()
+            destinyNumberProfile = destinyNumber
+            
+            let zodiacSign = Calendar.current.updateZodiacSign(for: savedDate) ?? "leo"
+            zodiacSignProfileImageName = zodiacSign
+            
+            destynyNumberProfileImageName = destinyNumberImage
+        } else {
+            destinyNumberProfile = 1
+            zodiacSignProfileImageName = "leo"
+            destynyNumberProfileImageName = "one"
+        }
+    }
+    
+    
     func fetchDescriptionSign() {
         let path = "/sign?s=\(zodiacSignProfileImageName)"
         NetworkManager.shared.fetchData(forPath: path) { (data, _, _) in
@@ -45,7 +70,7 @@ class ProfileViewModel: ObservableObject {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
                     if let numerologyDict = json as? [String: Any] {
                         let descriptionNumber = Numerology(desc: numerologyDict["desc"] as? String ?? "",
-                                                    number: numerologyDict["number"] as? String ?? "")
+                                                           number: numerologyDict["number"] as? String ?? "")
                         DispatchQueue.main.async {
                             self.descriptionNumber = descriptionNumber
                             self.isNumerologyDataLoading = false
@@ -60,7 +85,5 @@ class ProfileViewModel: ObservableObject {
             }
         }
     }
-    
-
     
 }

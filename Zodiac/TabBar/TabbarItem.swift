@@ -23,7 +23,7 @@ struct TabBarItem: View {
                         .frame(width: 39, height: 39)
                         .foregroundColor(selectedTab == tab ? .white : Color.secondColorForGradient)
                     
-                    Image("leo")
+                    Image(UserDefaults.standard.string(forKey: "imageNameForProfile")!)
                         .resizable()
                         .frame(width: 30, height: 30)
                 }

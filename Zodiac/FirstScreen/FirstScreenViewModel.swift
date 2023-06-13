@@ -13,4 +13,14 @@ class FirstScreenViewModel: ObservableObject {
     init() {
         selectedDate = Date()
     }
+    
+    func saveSelectedDate() {
+        UserDefaults.standard.set(selectedDate, forKey: "currentDate")
+    }
+    
+    func saveImageNameForProfile() {
+        let zodiacSign = Calendar.current.updateZodiacSign(for: selectedDate) ?? "leo"
+        UserDefaults.standard.set(zodiacSign, forKey: "imageNameForProfile")
+    }
+    
 }

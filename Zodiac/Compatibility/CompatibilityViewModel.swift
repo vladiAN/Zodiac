@@ -26,16 +26,16 @@ class CompatibilityViewModel: ObservableObject {
     @Published var selectedSign: SelectedSign = .firstSign
     
     func continueButtonTapped(zodiacSignImageName: String, for sign: SelectedSign) {
-            showDatePickerView = false
-            
-            if sign == .firstSign {
-                firstSignImage = zodiacSignImageName
-                firstSignName =  zodiacSignImageName.capitalized
-            } else if sign == .secondSign {
-                secondSignImage = zodiacSignImageName
-                secondSignName = zodiacSignImageName.capitalized
-            }
+        showDatePickerView = false
+        
+        if sign == .firstSign {
+            firstSignImage = zodiacSignImageName
+            firstSignName =  zodiacSignImageName.capitalized
+        } else if sign == .secondSign {
+            secondSignImage = zodiacSignImageName
+            secondSignName = zodiacSignImageName.capitalized
         }
+    }
     
     func fetchCompatibility() {
         let path = "/affinity?sign1=\(firstSignImage)&sign2=\(secondSignImage)"
@@ -46,7 +46,6 @@ class CompatibilityViewModel: ObservableObject {
                         self.compatibilities = compatibilities
                         self.isCompatibilityDataLoading = false
                         self.showCompatibilityScreen = true
-                        
                     }
                 }
             }

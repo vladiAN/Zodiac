@@ -23,21 +23,21 @@ struct NumerologyView: View {
             
             VStack {
                 
-                    Text("State the date of birth")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .padding(.top, 10)
-                        .frame(height: viewModel.isNumberReceived ? 0 : 1)
-                        .opacity(viewModel.isNumberReceived ? 0 : 1)
-
+                Text("State the date of birth")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .padding(.top, 10)
+                    .frame(height: viewModel.isNumberReceived ? 0 : 1)
+                    .opacity(viewModel.isNumberReceived ? 0 : 1)
                 
-                    DatePicker("", selection: $viewModel.birthDate, in: ...Date(), displayedComponents: .date)
-                        .datePickerStyle(.wheel)
-                        .labelsHidden()
-                        .colorInvert()
-                        .frame(height: viewModel.isNumberReceived ? 0 : 400)
-                        .opacity(viewModel.isNumberReceived ? 0 : 1)
+                
+                DatePicker("", selection: $viewModel.birthDate, in: ...Date(), displayedComponents: .date)
+                    .datePickerStyle(.wheel)
+                    .labelsHidden()
+                    .colorInvert()
+                    .frame(height: viewModel.isNumberReceived ? 0 : 400)
+                    .opacity(viewModel.isNumberReceived ? 0 : 1)
                 
                 Button(action: {
                     
@@ -54,12 +54,12 @@ struct NumerologyView: View {
                         }
                     }
                 }) {
-                        Text(viewModel.isNumberReceived ? "Сalculate new fate number" : "Сalculate fate number")
-                            .frame(width: 250, height: 28)
-                            .padding()
-                            .background(viewModel.isNumberReceived ? Color.secondColorForGradient : Color.firstColorForGradient)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                    Text(viewModel.isNumberReceived ? "Сalculate new fate number" : "Сalculate fate number")
+                        .frame(width: 250, height: 28)
+                        .padding()
+                        .background(viewModel.isNumberReceived ? Color.secondColorForGradient : Color.firstColorForGradient)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
                 
                 if viewModel.isNumberReceived {

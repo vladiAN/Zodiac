@@ -13,36 +13,35 @@ struct DescriptionSignView: View {
     
     var body: some View {
         ScrollView {
-                  ForEach(descriptionSign.sections, id: \.self) { section in
-                      DisclosureGroup(
-                          content: {
-                              ScrollView {
-                                  Text(section.value)
-                                      .padding(.all, 10)
-                                      .padding(.horizontal, 5)
-                                      .foregroundColor(Color.black)
-                                      .multilineTextAlignment(.leading)
-                                  
-                              }
-                          },
-                          label: {
-                              Text(section.title)
-                                  .foregroundColor(Color.black)
-                                  .font(.headline)
-                                  .padding(.horizontal, 5)
-                                  .multilineTextAlignment(.leading)
-                          }
-                      )
-                      .padding(.vertical, 8)
-                      .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(Color.white)
-                            .padding(.horizontal, -5)
-                      )
-                      .padding(.horizontal)
-                      .padding(.bottom, 8)
-                  }
-              }
+            ForEach(descriptionSign.sections, id: \.self) { section in
+                DisclosureGroup(
+                    content: {
+                        ScrollView {
+                            Text(section.value)
+                                .padding(.all, 10)
+                                .padding(.horizontal, 5)
+                                .foregroundColor(Color.black)
+                                .multilineTextAlignment(.leading)
+                        }
+                    },
+                    label: {
+                        Text(section.title)
+                            .foregroundColor(Color.black)
+                            .font(.headline)
+                            .padding(.horizontal, 5)
+                            .multilineTextAlignment(.leading)
+                    }
+                )
+                .padding(.vertical, 8)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color.white)
+                        .padding(.horizontal, -5)
+                )
+                .padding(.horizontal)
+                .padding(.bottom, 8)
+            }
+        }
         .background(
             LinearGradient(
                 gradient: Gradient(colors: [Color.firstColorForGradient, Color.secondColorForGradient]),
