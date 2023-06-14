@@ -47,13 +47,17 @@ struct ProfileView: View {
                             .padding(.all)
                         
                     } else {
-                        Text("Read the description")
-                            .frame(width: 200, height: 28)
-                            .padding()
-                            .background(Color.secondColorForGradient)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                            .padding(.all)
+                        
+                        HStack {
+                            Text("Read the description")
+                            Image(systemName: "arrow.right")
+                        }
+                        .frame(width: 200, height: 28)
+                        .padding()
+                        .background(Color.secondColorForGradient)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.all)
                     }
                     
                 }
@@ -93,13 +97,16 @@ struct ProfileView: View {
                             .tint(.white)
                             .padding(.all)
                     } else {
-                        Text("Check info")
-                            .frame(width: 150, height: 28)
-                            .padding()
-                            .background(Color.firstColorForGradient)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                            .padding(.all)
+                        HStack {
+                            Text("Check info")
+                            Image(systemName: "arrow.right")
+                        }
+                        .frame(width: 150, height: 28)
+                        .padding()
+                        .background(Color.firstColorForGradient)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.all)
                     }
                     
                 }
@@ -132,6 +139,7 @@ struct ProfileView: View {
         }
     }
 }
+
 
 
 struct ProfileView_Previews: PreviewProvider {

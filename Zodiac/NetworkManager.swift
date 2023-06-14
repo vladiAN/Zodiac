@@ -73,9 +73,6 @@ struct HoroscopePayload: Codable {
        }
 }
 
-
-
-
 class NetworkManager {
     static let shared = NetworkManager()
     
@@ -146,7 +143,6 @@ class NetworkManager {
         
         dataTask.resume()
     }
-
     
 }
 

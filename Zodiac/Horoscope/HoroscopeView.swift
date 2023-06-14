@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HoroscopeView: View {
     @StateObject private var viewModel = HoroscopeViewModel()
-    @State private var profileImageName: String = ""
+    @State private var profileImageName = UserDefaults.standard.string(forKey: "imageNameForProfile")!
     
     var body: some View {
         ZStack{
@@ -19,52 +19,83 @@ struct HoroscopeView: View {
                 endPoint: .bottomTrailing
             )
             .edgesIgnoringSafeArea(.all)
-
+            
             
             VStack {
-//                Image(profileImageName)
-                Image("gemini")
+                Image("\(profileImageName)")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 250, height: 250)
-                .padding(.top)
+                    .padding(.top)
                 
                 Spacer()
                 
                 Button {
-                    
+                    viewModel.isDProfileHoroscopeDataLoading = true
+                    viewModel.fetchHoroscopeData(for: .profileHoroscope)
                 } label: {
-                    
-                    Text("Get horoscope for \(profileImageName.uppercased())")
-                        .padding()
-                        .background(Color.secondColorForGradient)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
+                    HStack {
+                        Text("Get horoscope for \(profileImageName.uppercased())")
+                            .frame(height: 28)
+                        if viewModel.isDProfileHoroscopeDataLoading {
+                            ProgressView()
+                                .tint(.white)
+                                .padding(.leading, 1)
+                        } else {
+                            Image(systemName: "arrow.right")
+                        }
+                    }
+                    .padding()
+                    .background(Color.secondColorForGradient)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
                 }
                 .padding()
+                .fullScreenCover(isPresented: $viewModel.showProfileHoroscopeScreen) {
+                    NavigationView {
+                        ProfileHoroscopeView(horoscope: viewModel.getHoroscopeText(for: profileImageName), profileImageName: profileImageName)
+                            .navigationBarItems(leading: Button(action: {
+                                viewModel.showProfileHoroscopeScreen = false
+                            }) {
+                                Image(systemName: "chevron.backward")
+                                Text("Back")
+                            })
+                    }
+                }
                 
                 Button {
                     viewModel.isAllHoroscopeDataLoading = true
-                    viewModel.fetchHoroscopeData()
+                    viewModel.fetchHoroscopeData(for: .allHoroscope)
                 } label: {
-                    if viewModel.isAllHoroscopeDataLoading {
-                        ProgressView()
-                            .frame(width: 200, height: 28)
-                            .padding()
-                            .background(Color.firstColorForGradient)
-                            .cornerRadius(10)
-                            .tint(.white)
-                            .padding(.all)
-                    } else {
+                    
+                    HStack {
                         Text("Get horoscope for all signs")
-                            .frame(width: 200, height: 28)
-                            .padding()
-                            .background(Color.firstColorForGradient)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                            .frame(width: 210, height: 28)
+                        if viewModel.isAllHoroscopeDataLoading {
+                            ProgressView()
+                                .tint(.white)
+                                .padding(.leading, 1)
+                        } else {
+                            Image(systemName: "arrow.right")
+                        }
                     }
+                    .padding()
+                    .background(Color.firstColorForGradient)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
                 }
                 .padding()
+                .fullScreenCover(isPresented: $viewModel.showAllHoroscopeScreen) {
+                    NavigationView {
+                        AllHoroscopeView(horoscope: viewModel.horoscope ?? nil)
+                            .navigationBarItems(leading: Button(action: {
+                                viewModel.showAllHoroscopeScreen = false
+                            }) {
+                                Image(systemName: "chevron.backward")
+                                Text("Back")
+                            })
+                    }
+                }
                 
                 Spacer()
             }

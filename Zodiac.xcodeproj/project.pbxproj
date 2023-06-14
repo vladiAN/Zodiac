@@ -21,6 +21,8 @@
 		C0B154D92A2FB6C700C7B55A /* NumerologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B154D82A2FB6C700C7B55A /* NumerologyViewModel.swift */; };
 		C0F2CC8B2A2908B500BC88A1 /* Extention+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F2CC8A2A2908B500BC88A1 /* Extention+Color.swift */; };
 		C0F78EC72A28BDFC00A8CD26 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = C0F78EC62A28BDFC00A8CD26 /* PartialSheet */; };
+		EF70788B2A39C606009448EC /* ProfileHoroscopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF70788A2A39C606009448EC /* ProfileHoroscopeView.swift */; };
+		EF70788D2A39D39D009448EC /* AllHoroscopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF70788C2A39D39D009448EC /* AllHoroscopeView.swift */; };
 		EF996C512A32215E00439C14 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C502A32215E00439C14 /* Tabbar.swift */; };
 		EF996C532A3337FD00439C14 /* TabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C522A3337FD00439C14 /* TabbarItem.swift */; };
 		EF996C552A3338A300439C14 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C542A3338A300439C14 /* TabBarViewModel.swift */; };
@@ -52,6 +54,8 @@
 		C0B154D62A2F816F00C7B55A /* NumerologyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyView.swift; sourceTree = "<group>"; };
 		C0B154D82A2FB6C700C7B55A /* NumerologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyViewModel.swift; sourceTree = "<group>"; };
 		C0F2CC8A2A2908B500BC88A1 /* Extention+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Color.swift"; sourceTree = "<group>"; };
+		EF70788A2A39C606009448EC /* ProfileHoroscopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHoroscopeView.swift; sourceTree = "<group>"; };
+		EF70788C2A39D39D009448EC /* AllHoroscopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHoroscopeView.swift; sourceTree = "<group>"; };
 		EF996C502A32215E00439C14 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		EF996C522A3337FD00439C14 /* TabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItem.swift; sourceTree = "<group>"; };
 		EF996C542A3338A300439C14 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				EF996C5C2A336DF500439C14 /* HoroscopeView.swift */,
+				EF70788A2A39C606009448EC /* ProfileHoroscopeView.swift */,
+				EF70788C2A39D39D009448EC /* AllHoroscopeView.swift */,
 				EF996C722A38BDA600439C14 /* HoroscopeViewModel.swift */,
 			);
 			path = Horoscope;
@@ -278,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF70788B2A39C606009448EC /* ProfileHoroscopeView.swift in Sources */,
 				EF996C732A38BDA600439C14 /* HoroscopeViewModel.swift in Sources */,
 				EF996C5D2A336DF500439C14 /* HoroscopeView.swift in Sources */,
 				EF996C642A33776B00439C14 /* FirstScreenViewModel.swift in Sources */,
@@ -300,6 +307,7 @@
 				C0F2CC8B2A2908B500BC88A1 /* Extention+Color.swift in Sources */,
 				C0B154D92A2FB6C700C7B55A /* NumerologyViewModel.swift in Sources */,
 				93BB3DB12A261FCA00C8A644 /* CompatibilityView.swift in Sources */,
+				EF70788D2A39D39D009448EC /* AllHoroscopeView.swift in Sources */,
 				EF996C552A3338A300439C14 /* TabBarViewModel.swift in Sources */,
 				EF996C682A37315200439C14 /* Extention+Calendar.swift in Sources */,
 				93BB3D9F2A25F98000C8A644 /* ZodiacApp.swift in Sources */,
@@ -433,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Zodiac/Preview Content\"";
+				DEVELOPMENT_TEAM = KDRWFQY234;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
@@ -467,6 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Zodiac/Preview Content\"";
+				DEVELOPMENT_TEAM = KDRWFQY234;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
