@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct NumerologyView: View {
-    @StateObject private var viewModel: NumerologyViewModel = NumerologyViewModel()
+    @StateObject private var viewModel = NumerologyViewModel()
     
     var body: some View {
         ZStack{

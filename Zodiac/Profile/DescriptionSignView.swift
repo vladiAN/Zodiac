@@ -50,7 +50,7 @@ struct DescriptionSignView: View {
             )
             .edgesIgnoringSafeArea(.all)
         )
-        .navigationTitle("Sign Details")
+        .navigationTitle("Sign Description")
     }
 }
 

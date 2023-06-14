@@ -22,7 +22,7 @@ struct ProfileView: View {
             
             VStack{
                 
-                Text("Your zodiac sing: SignName").bold()
+                Text("Your zodiac sing: \(viewModel.zodiacSignProfileImageName.uppercased())").bold()
                     .foregroundColor(.white)
                     .font(.system(size: 23))
                     .padding(.top, 10)

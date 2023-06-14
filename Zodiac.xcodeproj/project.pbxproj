@@ -34,6 +34,7 @@
 		EF996C6C2A375CB700439C14 /* Extention+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C6B2A375CB700439C14 /* Extention+Int.swift */; };
 		EF996C6E2A37659D00439C14 /* DescriptiomNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C6D2A37659D00439C14 /* DescriptiomNumberView.swift */; };
 		EF996C702A382AD600439C14 /* Extention+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C6F2A382AD600439C14 /* Extention+Date.swift */; };
+		EF996C732A38BDA600439C14 /* HoroscopeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C722A38BDA600439C14 /* HoroscopeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		EF996C6B2A375CB700439C14 /* Extention+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Int.swift"; sourceTree = "<group>"; };
 		EF996C6D2A37659D00439C14 /* DescriptiomNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptiomNumberView.swift; sourceTree = "<group>"; };
 		EF996C6F2A382AD600439C14 /* Extention+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Date.swift"; sourceTree = "<group>"; };
+		EF996C722A38BDA600439C14 /* HoroscopeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				EF996C5C2A336DF500439C14 /* HoroscopeView.swift */,
+				EF996C722A38BDA600439C14 /* HoroscopeViewModel.swift */,
 			);
 			path = Horoscope;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF996C732A38BDA600439C14 /* HoroscopeViewModel.swift in Sources */,
 				EF996C5D2A336DF500439C14 /* HoroscopeView.swift in Sources */,
 				EF996C642A33776B00439C14 /* FirstScreenViewModel.swift in Sources */,
 				93076E792A2751FD0001C18E /* DataPickerViewModel.swift in Sources */,

@@ -21,7 +21,6 @@ class ProfileViewModel: ObservableObject {
     
     init() {
         loadProfileData()
-        print(destinyNumberProfile, zodiacSignProfileImageName, destynyNumberProfileImageName)
     }
     
     func loadProfileData() {
