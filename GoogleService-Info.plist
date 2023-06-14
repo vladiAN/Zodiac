@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>287177181506-qthtt51790o6g10aas0lhjocsqj8eorn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.287177181506-qthtt51790o6g10aas0lhjocsqj8eorn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBftIsYpyWj2yi7HskRsWl4AVEOCObuyx0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>287177181506</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.jeringeorge.zodiac</string>
+	<key>PROJECT_ID</key>
+	<string>zodiac-dc408</string>
+	<key>STORAGE_BUCKET</key>
+	<string>zodiac-dc408.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:287177181506:ios:ea4618e57edfa903ee60db</string>
+</dict>
+</plist>

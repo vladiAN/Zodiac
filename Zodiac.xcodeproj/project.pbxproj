@@ -21,6 +21,8 @@
 		C0B154D92A2FB6C700C7B55A /* NumerologyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B154D82A2FB6C700C7B55A /* NumerologyViewModel.swift */; };
 		C0F2CC8B2A2908B500BC88A1 /* Extention+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F2CC8A2A2908B500BC88A1 /* Extention+Color.swift */; };
 		C0F78EC72A28BDFC00A8CD26 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = C0F78EC62A28BDFC00A8CD26 /* PartialSheet */; };
+		EF4D0D422A3A30CE0025F030 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF4D0D412A3A30CE0025F030 /* GoogleService-Info.plist */; };
+		EF4D0D452A3A32570025F030 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = EF4D0D442A3A32570025F030 /* FirebaseMessaging */; };
 		EF70788B2A39C606009448EC /* ProfileHoroscopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF70788A2A39C606009448EC /* ProfileHoroscopeView.swift */; };
 		EF70788D2A39D39D009448EC /* AllHoroscopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF70788C2A39D39D009448EC /* AllHoroscopeView.swift */; };
 		EF996C512A32215E00439C14 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF996C502A32215E00439C14 /* Tabbar.swift */; };
@@ -54,6 +56,7 @@
 		C0B154D62A2F816F00C7B55A /* NumerologyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyView.swift; sourceTree = "<group>"; };
 		C0B154D82A2FB6C700C7B55A /* NumerologyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumerologyViewModel.swift; sourceTree = "<group>"; };
 		C0F2CC8A2A2908B500BC88A1 /* Extention+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Color.swift"; sourceTree = "<group>"; };
+		EF4D0D412A3A30CE0025F030 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF70788A2A39C606009448EC /* ProfileHoroscopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHoroscopeView.swift; sourceTree = "<group>"; };
 		EF70788C2A39D39D009448EC /* AllHoroscopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHoroscopeView.swift; sourceTree = "<group>"; };
 		EF996C502A32215E00439C14 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF4D0D452A3A32570025F030 /* FirebaseMessaging in Frameworks */,
 				C0F78EC72A28BDFC00A8CD26 /* PartialSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +93,7 @@
 			children = (
 				93BB3D9D2A25F98000C8A644 /* Zodiac */,
 				93BB3DA22A25F98200C8A644 /* Assets.xcassets */,
+				EF4D0D412A3A30CE0025F030 /* GoogleService-Info.plist */,
 				93BB3D9C2A25F98000C8A644 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			name = Zodiac;
 			packageProductDependencies = (
 				C0F78EC62A28BDFC00A8CD26 /* PartialSheet */,
+				EF4D0D442A3A32570025F030 /* FirebaseMessaging */,
 			);
 			productName = Zodiac;
 			productReference = 93BB3D9B2A25F98000C8A644 /* Zodiac.app */;
@@ -257,6 +263,7 @@
 			mainGroup = 93BB3D922A25F98000C8A644;
 			packageReferences = (
 				C0F78EC52A28BDFC00A8CD26 /* XCRemoteSwiftPackageReference "PartialSheet" */,
+				EF4D0D432A3A32570025F030 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 93BB3D9C2A25F98000C8A644 /* Products */;
 			projectDirPath = "";
@@ -274,6 +281,7 @@
 			files = (
 				93BB3DA62A25F98200C8A644 /* Preview Assets.xcassets in Resources */,
 				93BB3DA32A25F98200C8A644 /* Assets.xcassets in Resources */,
+				EF4D0D422A3A30CE0025F030 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,13 +446,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jerin George (KDRWFQY234)";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Zodiac/Preview Content\"";
-				DEVELOPMENT_TEAM = KDRWFQY234;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = KDRWFQY234;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -457,8 +466,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Vlad.Zodiac;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeringeorge.zodiac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ZodiakProvisioningProfile;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -473,13 +484,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jerin George (KDRWFQY234)";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Zodiac/Preview Content\"";
-				DEVELOPMENT_TEAM = KDRWFQY234;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = KDRWFQY234;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -492,8 +504,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Vlad.Zodiac;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeringeorge.zodiac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ZodiakProvisioningProfile;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -535,6 +549,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		EF4D0D432A3A32570025F030 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -542,6 +564,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C0F78EC52A28BDFC00A8CD26 /* XCRemoteSwiftPackageReference "PartialSheet" */;
 			productName = PartialSheet;
+		};
+		EF4D0D442A3A32570025F030 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF4D0D432A3A32570025F030 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
