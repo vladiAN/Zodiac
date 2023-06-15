@@ -14,6 +14,8 @@ jobs:
         run: chmod +x ./.github/secrets/decrypt_secrets.sh
       - name: Setup provisioning profile
         run: ./.github/secrets/decrypt_secrets.sh
+      - name: Set execute permission
+        run: chmod +x ./.github/scripts/dependencies.sh
       - name: Resolve dependencies
         env:
           NAME: ${{ github.event.repository.name }}
