@@ -30,7 +30,6 @@ struct ZodiacApp: App {
 }
 
 class NavigationHelper: ObservableObject {
-    
     @Published var showNextView = false
     
 }
