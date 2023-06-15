@@ -28,7 +28,7 @@ jobs:
           NAME: ${{ github.event.repository.name }}
         run: ./.github/scripts/export_ipa.sh
       - name: Set execute permission
-        run: chmod +x ./.github/scripts/archive_app.sh
+        run: chmod +x ./.github/scripts/export_ipa.sh
       - name: Exporting .ipa
         env:
           NAME: ${{ github.event.repository.name }}
