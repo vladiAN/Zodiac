@@ -26,7 +26,7 @@ jobs:
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           NAME: ${{ github.event.repository.name }}
-        run: ./.github/scripts/export_ipa.sh
+        run: ./.github/scripts/archive_app.sh
       - name: Set execute permission
         run: chmod +x ./.github/scripts/export_ipa.sh
       - name: Exporting .ipa
