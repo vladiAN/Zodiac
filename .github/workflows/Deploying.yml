@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
+      - name: Set execute permission
+        run: chmod +x ./.github/secrets/decrypt_secrets.sh
       - name: Setup provisioning profile
         run: ./.github/secrets/decrypt_secrets.sh
       - name: Resolve dependencies
