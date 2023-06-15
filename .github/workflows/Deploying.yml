@@ -20,15 +20,21 @@ jobs:
         env:
           NAME: ${{ github.event.repository.name }}
         run: ./.github/scripts/dependencies.sh
+      - name: Set execute permission
+        run: chmod +x ./.github/scripts/archive_app.sh
       - name: Archiving project
         env:
           PR_NUMBER: $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           NAME: ${{ github.event.repository.name }}
-        run: ./.github/scripts/archive_app.sh
+        run: ./.github/scripts/export_ipa.sh
+      - name: Set execute permission
+        run: chmod +x ./.github/scripts/archive_app.sh
       - name: Exporting .ipa
         env:
           NAME: ${{ github.event.repository.name }}
         run: ./.github/scripts/export_ipa.sh
+      - name: Set execute permission
+        run: chmod +x ./.github/scripts/publish_testflight.sh
       - name: Publishing app
         if: success()
         env:
